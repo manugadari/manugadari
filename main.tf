@@ -4,11 +4,22 @@ provider "aws" {
   secret_key = "jGkEV3nn0PZwbBceFamYMS/cM8K7JlI5pjbl6B1X"
 }
 
-resource "aws_instance" "example" {
-  ami           = "ami-051f8a213df8bc089"
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.16"
+    }
+  }
+
+  required_version = ">= 1.2.0"
+}
+
+resource "aws_instance" "app_server" {
+  ami           = "ami-830c94e3"
   instance_type = "t2.micro"
 
   tags = {
-    Name = "ExampleInstance"
+    Name = "Terraform_Demo"
   }
 }
