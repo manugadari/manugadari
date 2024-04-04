@@ -15,7 +15,7 @@ terraform {
   required_version = ">= 1.2.0"
 }
 
-resource "aws_instance" "app_server" {
+resource "aws_instance" "Manojkumar-LT" {
   ami           = "ami-830c94e3"
   instance_type = "t2.micro"
 
